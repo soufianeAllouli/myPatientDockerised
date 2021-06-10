@@ -2,7 +2,7 @@ version: '3.1'
 
 services:
   patient_app:
-    image: my-patient
+    image: soufianeallouli/patient_app
     restart: always
     ports:
       - 8091:8090
