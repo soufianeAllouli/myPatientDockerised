@@ -12,7 +12,6 @@ import com.ASF.entities.Patient;
 
 @SpringBootApplication
 public class MyPatientApplication implements CommandLineRunner{
-	public  static int counter=1;
 
 	@Autowired
 		 IPatientDao patientRepository;
@@ -24,10 +23,10 @@ public class MyPatientApplication implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 		
-	patientRepository.save(new Patient(null,"hossam"+(counter++),new Date(),true));
-	patientRepository.save(new Patient(null,"imane"+(counter++),new Date(),false));
-	patientRepository.save(new Patient(null,"yassin"+(counter++),new Date(),false));
-	patientRepository.save(new Patient(null,"amal"+(counter++),new Date(),true));
+	patientRepository.save(new Patient(null,"hossam",new Date(),true));
+	patientRepository.save(new Patient(null,"imane",new Date(),false));
+	patientRepository.save(new Patient(null,"yassin",new Date(),false));
+	patientRepository.save(new Patient(null,"amal",new Date(),true));
 	
 	patientRepository.findAll()
 	.forEach(patient->System.out.println(patient.toString()));
