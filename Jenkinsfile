@@ -14,13 +14,13 @@ node{
         sh "docker build -t soufianeallouli/patient_app ."
     }
     
-    /*stage("push to DockerHub"){
+    stage("push to DockerHub"){
         withCredentials([string(credentialsId: 'DockerHub_Pass', variable: 'DockerHub_Pass')]) {
             sh "docker login -u soufianeallouli -p ${DockerHub_Pass}"
         }
         sh "docker push soufianeallouli/patient_app"
         
-    }*/
+    }
     
     stage("deploy application"){
         sh "docker-compose down"
