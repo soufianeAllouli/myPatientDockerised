@@ -5,8 +5,7 @@ services:
     image: soufianeallouli/patient_app
     restart: always
     ports:
-      - 8093:8090
-
+      - 8092:8090
   mysql_db:
     image: mysql
     command: --default-authentication-plugin=mysql_native_password
