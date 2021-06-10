@@ -13,6 +13,7 @@ import com.ASF.entities.Patient;
 @SpringBootApplication
 public class MyPatientApplication implements CommandLineRunner{
 	public  static int counter=1;
+
 	@Autowired
 		 IPatientDao patientRepository;
 	
