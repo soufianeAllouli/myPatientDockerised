@@ -17,8 +17,14 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		System.out.println("***************************************");
 		System.out.println(passwordEncoder.encode("1234"));
 		System.out.println("****************************************");
-		auth.inMemoryAuthentication().withUser("user").password(passwordEncoder.encode("1234")).roles("USER");
-		auth.inMemoryAuthentication().withUser("user2").password(passwordEncoder.encode("1234")).roles("USER");
+		auth.inMemoryAuthentication().
+				withUser("user")
+				.password(passwordEncoder.encode("1234"))
+				.roles("USER");
+		auth.inMemoryAuthentication()
+				.withUser("user2")
+				.password(passwordEncoder.encode("1234"))
+				.roles("USER");
 		auth.inMemoryAuthentication().withUser("admin").password(passwordEncoder.encode("1234")).roles("ADMIN","USER");
 
 	}
@@ -26,8 +32,12 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.formLogin();
-		http.authorizeRequests().antMatchers("/save**/**","/delete**/**","/form**/**").hasRole("ADMIN");
-		http.authorizeRequests().antMatchers("/patients**/**").hasRole("USER");
+		http.authorizeRequests()
+				.antMatchers("/save**/**","/delete**/**","/form**/**")
+				.hasRole("ADMIN");
+		http.authorizeRequests()
+				.antMatchers("/patients**/**")
+				.hasRole("USER");
 		//http.authorizeRequests().anyRequest().authenticated();
 		http.exceptionHandling().accessDeniedPage("/notAutorized");
 	}
