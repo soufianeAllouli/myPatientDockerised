@@ -22,12 +22,14 @@ public class MyPatientApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		
+	//database initialisation	
+	/*
 	patientRepository.save(new Patient(null,"hossam",new Date(),true));
 	patientRepository.save(new Patient(null,"imane",new Date(),false));
 	patientRepository.save(new Patient(null,"yassin",new Date(),false));
 	patientRepository.save(new Patient(null,"amal",new Date(),true));
-	
+	*/
+		
 	patientRepository.findAll()
 	.forEach(patient->System.out.println(patient.toString()));
 		
