@@ -30,10 +30,10 @@ public class MyPatientApplication implements CommandLineRunner{
 	patientRepository.save(new Patient(null,"amal",new Date(),true));
 	*/
 		
-	/*
+	
 	patientRepository.findAll()
 	.forEach(patient->System.out.println(patient.toString()));
-	*/
+
 		
 	}
 
